@@ -1,11 +1,9 @@
 import os
-import time
 
 tarefas = []
 opcao = 0
 
 while True:
-    os.system('cls')
     print('\n\nGerenciando sua Lista de Tarefas')
     print('\n\n O que deseja fazer?')
     print('\n 1 - Listar Tarefas')
@@ -36,11 +34,15 @@ while True:
             for i in tarefas:
                 print(f'\n{int(tarefas.index(i)) + 1} -> {i}')
             t = int(input('\n\nDigite o numero da tarefa que deseja apagar: '))
-            tarefa_deletada = tarefas[t - 1]
-            decisao = input(f'Certeza que deseja apagar a tarefa \'{tarefa_deletada}\' ? S ou N ')
-            if decisao == 'S':
-                tarefas.pop(t - 1)
-                print('Tarefa apagada!')
+            qtd_tarefas = len(tarefas)
+            if t > qtd_tarefas or t == 0:
+                print('Tarefa não encontrada!')
+            else:
+                tarefa_deletada = tarefas[t - 1]
+                decisao = input(f'Certeza que deseja apagar a tarefa \'{tarefa_deletada}\' ? S ou N ')
+                if decisao == 'S':
+                    tarefas.pop(t - 1)
+                    print('Tarefa apagada!')
                 
         else:
             print('Sem tarefas por enquanto!')
@@ -48,7 +50,7 @@ while True:
         
     elif opcao == 4:
         os.system('cls')
-        print('\n\n\n\n\n\n\nFinalizando o tempo!\n\n\n\n\n')
+        print('\n\n\n\n\n\n\nFinalizando o Agenda!\n\n\n\n\n')
         exit()
         
         
