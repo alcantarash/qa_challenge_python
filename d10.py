@@ -2,20 +2,8 @@ import os
 import time
 import random
 
-def ehPrimo(numero):
-    divisivel = 0
-    
-    for i in range(1, numero + 1):
-        if divisivel <= 2:
-            if numero % i == 0:
-                divisivel = divisivel + 1
-    if divisivel == 2:
-        return True
-    else:
-        return False
 
 tentativas = 7
-opcao = 0
 randNum = random.randint(1, 100)
 
 while True:
