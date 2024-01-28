@@ -8,7 +8,6 @@ randNum = random.randint(1, 100)
 
 while True:
 
-    print(f'{randNum}')
     if tentativas > 0:
     
         print(f'\n\nFoi gerado um número entre 1 e 100 \t\t\t\t Tentativas: {tentativas}')
