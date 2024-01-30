@@ -2,6 +2,13 @@ import os
 import time
 import random
 
+def validaNumero(digitado):
+    try:
+        float(digitado)
+        return True
+    except ValueError:
+        print('Entrada Incorreta! Tente Novamente!')
+
 listNum = []
 decisao = ''
 
@@ -13,11 +20,9 @@ while True:
     decisao = input('\nDigite uma das opções ou seu numero: ')
         
     if (decisao.upper() != 'S') and (decisao.upper() != 'F'):
-        if(decisao.isnumeric()):
+        if(validaNumero(decisao)):
             listNum.append(int(decisao))
             print(f'{listNum} \n\n\n')
-        else:
-            print('Entrada Incorreta! Tente Novamente!')
 
     elif decisao.upper() == 'F':
         os.system('cls')
